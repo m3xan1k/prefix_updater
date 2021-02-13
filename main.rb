@@ -32,6 +32,9 @@ def main(domains)
   prefixes_string = prefixes.join("\n") + "\n"
   
   File.write("prefixes.lst", prefixes_string)
+  
+  # reload bird daemon
+  %x[/etc/init.d/bird reload]
 end
 
 
